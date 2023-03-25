@@ -1,0 +1,38 @@
+story-app
+BpY2iA7m8cZe90Tf
+
+Npm packages:
+express mongoose connect-mongo express-session express-handlebars dotenv method-override moment morgan passport passport-google-oauth20
+
+connect-mongo - store sessions to the database so that when you reset the server, we dont get logged out
+morgan - for  logging in, separate for different mode(dev/prod)
+express-handlebars - template engine | layouts are in ./views/layouts
+dotenv - config 
+method-override: allows put and delete methods in place of put and 
+moment- format dates
+
+cross-env : global environment variables
+
+edit script tag in package.json to suit production as well as developemnt env:
+	"scripts"{
+		"start": "cross-env NODE_ENV=production node app"
+		"dev": "cross-env NODE_ENV=development nodemon app"
+	}
+
+Routes folder to forward the supported requests (and any information encoded in request URLs) to the appropriate controller functions. express.Router()
+REplace 'app' i router files with 'router'
+Link to the routing file from app.js
+
+Files in oublic folder can be accessed from other files simply by "/css/style.css"
+
+Example: login page: the text content for login page is in views/login.hbs
+The layout for the above content is in views/layouts/login.hbs
+Inside the layout, add {{{body}}}, the content body will b inserted 
+ 
+
+
+
+TO CHECK:
+
+NODE_ENV
+dotenv config method
