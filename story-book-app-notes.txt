@@ -1,6 +1,9 @@
 story-app
 BpY2iA7m8cZe90Tf
 
+Client ID: 199806842946-igbka4tpgi72sj3lc4n6kqsn96505a54.apps.googleusercontent.com
+CLient Secret: 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
+
 Npm packages:
 express mongoose connect-mongo express-session express-handlebars dotenv method-override moment morgan passport passport-google-oauth20
 
@@ -27,8 +30,12 @@ Files in oublic folder can be accessed from other files simply by "/css/style.cs
 
 Example: login page: the text content for login page is in views/login.hbs
 The layout for the above content is in views/layouts/login.hbs
-Inside the layout, add {{{body}}}, the content body will b inserted 
- 
+Inside the layout, add {{{body}}}, the content body will b inserted  
+
+Passport is an authentication middleware for Node that authenticates requests.
+-pssport.initialize() initialises the authentication module.
+-passport.session() is another middleware that alters the request object and change the 'user' value that is currently the session id (from the client cookie) into the true deserialized user object. | for passport.session() to work, you need express-session installed and required before passport middlewares
+-The serializeUser() function sets an id as the cookie in the user’s browser, and the deserializeUser() function uses the id to look up the user in the database and retrieve the user object with data.
 
 
 
@@ -36,3 +43,9 @@ TO CHECK:
 
 NODE_ENV
 dotenv config method
+
+
+
+TO LEARN: https://www.codecademy.com/courses/user-authentication-authorization-express/lessons/sessions-cookies-vs-localstorage/exercises/introduction
+
+54:45
