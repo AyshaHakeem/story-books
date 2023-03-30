@@ -15,7 +15,6 @@ module.exports = passport =>{
             lastName: profile.name.familyName,
             image: profile.photos[0].value
         }
-        console.log(newUser)
 
         try{
             let user =  await User.findOne({googleId: profile.id})
