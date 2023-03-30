@@ -11,3 +11,7 @@ p{
 .card{
     padding: 20px;
 }
+
+.fa-small{
+    font-size: 16px !important;
+}

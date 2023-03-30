@@ -26,9 +26,25 @@ if(process.env.NODE_ENV === 'development' ){
     app.use(morgan('dev'))
 }
 
+// Helpers
+const {formatDate, stripTags, truncate, editIcon, select} = require('./helpers/hbs')
+
 //Handelbars template engine
 // to use 'hbs' instead of 'handlebars' as extension
-app.engine('.hbs', exphbs.engine({dafaultLayout: 'main', extname: '.hbs'}))
+app.engine(
+    '.hbs',  
+    exphbs.engine({
+        helpers: {
+            formatDate,
+            stripTags, 
+            truncate,
+            editIcon,
+            select
+        },
+        dafaultLayout: 'main', 
+        extname: '.hbs'
+        })
+)
 app.set('view engine', '.hbs')
 
 // Sessions
@@ -42,6 +58,13 @@ app.use(session({
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+// Global variable
+app.use((req,res,next)=>{
+    res.locals.user = req.user || null
+    next()
+})
+
 
 // routes
 app.use('/', require('./routes/index'))
