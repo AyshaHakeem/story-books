@@ -17,7 +17,7 @@
         <tr>
             <td><a href="/stories/{{_id}}">{{title}}</a></td> {{!-- because we're in the stories loop, need not specify as stories[i].title --}}
             <td>{{formatDate createdAt 'MMMM Do YYYY, hh:mm:ss'}}</td>
-            <td>{{status}}</td>
+            <td><span class="dash-status">{{status}}</span></td>
             <td></td>     {{!-- to delete/edit story --}}
         </tr>
         {{/each}}

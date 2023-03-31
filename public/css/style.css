@@ -15,3 +15,7 @@ p{
 .fa-small{
     font-size: 16px !important;
 }
+
+.img-small{
+    width: 100px;
+}
